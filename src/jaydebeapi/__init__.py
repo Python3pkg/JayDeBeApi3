@@ -193,7 +193,7 @@ class Cursor:
 
     def fetchone(self):
         #raise if not rs
-        if not self._rs.next():
+        if not next(self._rs):
             return None
         row = []
         for col in range(1, self._meta.getColumnCount() + 1):
